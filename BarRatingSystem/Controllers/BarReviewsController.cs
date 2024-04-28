@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BarRatingSystem.Data;
 using BarRatingSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BarRatingSystem.Controllers
 {
@@ -18,7 +19,7 @@ namespace BarRatingSystem.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: BarReviews
         public async Task<IActionResult> Index()
         {

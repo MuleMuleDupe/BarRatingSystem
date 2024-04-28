@@ -1,5 +1,6 @@
 ﻿using BarRatingSystem.Data;
 using BarRatingSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Linq;
@@ -14,9 +15,10 @@ namespace BarRatingSystem.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         public ActionResult Index()
         {
+
             ViewBag.NumberOfBars = 10;
             ViewBag.NumberOfReviews = 50;
             ViewBag.NumberOfUsers = 1000;

@@ -19,7 +19,7 @@ namespace BarRatingSystem.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: Bars
         public async Task<IActionResult> Index()
         {
